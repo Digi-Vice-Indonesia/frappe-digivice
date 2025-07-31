@@ -51,7 +51,7 @@ def get_app_logo():
 	if not app_logo:
 		logos = frappe.get_hooks("app_logo_url")
 		app_logo = logos[0]
-		if len(logos) == 2:
+		if len(logos) > 1:
 			app_logo = logos[1]
 
 	return app_logo
