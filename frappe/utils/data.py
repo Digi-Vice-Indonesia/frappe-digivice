@@ -1417,11 +1417,11 @@ def in_words(integer: int, in_million=True) -> str:
 	locale = "en_IN" if not in_million else frappe.local.lang
 	integer = int(integer)
 	try:
-		ret = num2words(integer, lang=locale)
+		ret = num2words(integer, lang="id")
 	except NotImplementedError:
-		ret = num2words(integer, lang="en")
+		ret = num2words(integer, lang="id")
 	except OverflowError:
-		ret = num2words(integer, lang="en")
+		ret = num2words(integer, lang="id")
 	return ret.replace("-", " ")
 
 
